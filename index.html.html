@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J2 SmartKas - Ponpes Al-Iman Bulus</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons for Modern UI -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts: Inter, Plus Jakarta Sans & Amiri (Islamic Accent) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@1&family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+            background-color: #f0f6f3;
+        }
+        .arabic-font {
+            font-family: 'Amiri', serif;
+        }
+        /* Grid digital background to simulate modern banking fintech portal */
+        .grid-banking-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        /* Custom scrollbar for modern and elegant table look */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0f766e;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0d9488;
+        }
+        /* Custom premium animations */
+        .fade-in-slide {
+            animation: fadeInSlide 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeInSlide {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Glow Effect for high-end feel */
+        .gold-glow {
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.15);
+        }
+        .teal-glow {
+            box-shadow: 0 0 30px rgba(20, 184, 166, 0.1);
+        }
+        /* Receipt Print Styling */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #receiptPrintArea, #receiptPrintArea * {
+                visibility: visible;
+            }
+            #receiptPrintArea {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                background: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col text-slate-800">
+
+    <!-- ======================= PREMIUM BANKING-STYLE LANDING PAGE ======================= -->
+    <div id="landingPage" class="fixed inset-0 z-50 bg-gradient-to-br from-[#002d28] via-[#004f47] to-[#011f1c] flex flex-col justify-between overflow-y-auto grid-banking-pattern">
+        <!-- Floating decorative radial glowing spots -->
+        <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- Upper Navbar Brand Area -->
+        <div class="max-w-7xl mx-auto w-full px-6 pt-6 sm:pt-8 flex justify-between items-center z-10 fade-in-slide">
+            <div class="flex items-center space-x-3">
+                <div class="bg-gradient-to-br from-amber-400 to-amber-600 p-2.5 rounded-xl shadow-lg shadow-amber-500/20">
+                    <i data-lucide="mosque" class="h-6 w-6 text-[#002d28]"></i>
+                </div>
+                <div>
+                    <span class="text-[10px] text-amber-400 font-extrabold uppercase tracking-widest block">Portal Mandiri</span>
+                    <h2 class="text-white font-black text-xl tracking-tight leading-none">J2 SmartKas</h2>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-2 text-xs text-teal-200/80">
+                <i data-lucide="shield-check" class="h-4 w-4 text-amber-500"></i>
+                <span>Sistem Pencatatan Finansial Terenkripsi PIN Pengurus</span>
+            </div>
+        </div>
+
+        <!-- Middle Main Content (Grid 12 Columns on Large Screens) -->
+        <div class="max-w-7xl mx-auto w-full px-6 py-8 md:py-12 z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center flex-grow flex">
+            
+            <!-- Left Side: App Intro and Quranic Verse with Gold Borders -->
+            <div class="lg:col-span-5 space-y-6 text-left fade-in-slide" style="animation-delay: 0.15s;">
+                <span class="inline-flex items-center space-x-2 bg-emerald-950/60 text-emerald-300 border border-emerald-500/20 text-[10px] px-3.5 py-1.5 rounded-full font-bold uppercase tracking-widest">
+                    <span class="w-1.5 h-1.5 bg-amber-500 rounded-full animate-pulse"></span>
+                    <span>Ponpes Al-Iman Bulus</span>
+                </span>
+                
+                <div class="space-y-2">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-none">
+                        Sistem Kas & Infaq <br><span class="bg-gradient-to-r from-amber-300 to-amber-500 bg-clip-text text-transparent">Kamar J2</span>
+                    </h1>
+                    <p class="text-xs sm:text-sm text-teal-100/70 max-w-md font-medium">
+                        Daerah Gebang-Loano (<span class="text-amber-400 font-semibold underline">Khusus Putra</span>). Aplikasi transparansi finansial modern untuk pelaporan kas, donasi infaq, dan rekapitulasi pengeluaran kegiatan kamar secara akuntabel.
+                    </p>
+                </div>
+
+                <!-- Premium Golden Frame Card containing QS. Al-Baqarah: 261 -->
+                <div class="bg-gradient-to-br from-[#003d35] to-[#001f1c] border-l-4 border-amber-500 rounded-2xl p-5 shadow-2xl relative gold-glow overflow-hidden">
+                    <div class="absolute -right-8 -bottom-8 text-white/5 pointer-events-none">
+                        <i data-lucide="heart-handshake" class="h-32 w-32"></i>
+                    </div>
+                    <div class="flex items-center space-x-2 text-amber-400 text-[10px] font-bold uppercase tracking-wider mb-3">
+                        <i data-lucide="book-open" class="h-3.5 w-3.5"></i>
+                        <span>Keutamaan Berinfaq</span>
+                    </div>
+                    <div class="arabic-font text-base sm:text-lg text-emerald-100 leading-relaxed mb-3 text-right">
+                        مَّثَلُ ٱلَّذِينَ يُنفِقُونَ أَمْوَٰلَهُمْ فِى سَبِيلِ ٱللَّهِ كَمَثَلِ حَبَّةٍ أَنبَتَتْ سَبْعَ سَنَابِلَ فِى كُلِّ سُنبُلَةٍ مِّا۟ئَةُ حَبَّةٍ ۗ وَٱللَّهُ يُضَٰعِفُ لِمَن يَشَآءُ ۗ وَٱللَّهُ وَٰسِعٌ عَلِيمٌ
+                    </div>
+                    <div class="text-[11px] text-slate-300 leading-relaxed italic border-t border-teal-800/60 pt-2.5">
+                        "Perumpamaan orang yang menginfakkan hartanya di jalan Allah seperti sebutir biji yang menumbuhkan tujuh tangkai, pada setiap tangkai ada seratus biji. Allah melipatgandakan bagi siapa yang Dia kehendaki..."
+                    </div>
+                    <span class="text-[9px] text-amber-500/90 font-bold block mt-2 tracking-wider">— QS. Al-Baqarah : 261</span>
+                </div>
+            </div>
+
+            <!-- Right Side: Majestic Access Portals designed like credit cards -->
+            <div class="lg:col-span-7 space-y-6 w-full fade-in-slide animate-delay-300" style="animation-delay: 0.3s;">
+                <h3 class="text-xs text-amber-400 font-extrabold uppercase tracking-widest block text-left lg:text-center">Silakan Pilih Akses Masuk Portal:</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Wali Santri Card (Teal & Silver Concept) -->
+                    <div onclick="enterAsWali()" class="group relative bg-[#004740]/80 backdrop-blur-md border border-white/10 hover:border-emerald-400/40 rounded-3xl p-6 shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer select-none">
+                        <!-- Holographic-like Bank Chip Visual -->
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-10 h-8 bg-gradient-to-br from-slate-200 to-slate-400 rounded-lg opacity-80 shadow-inner relative overflow-hidden">
+                                <div class="absolute inset-0 bg-white/20 border-b border-r border-black/10"></div>
+                            </div>
+                            <i data-lucide="users" class="h-6 w-6 text-emerald-300 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-emerald-300 text-[10px] font-extrabold uppercase tracking-wider">Akses Umum Bebas PIN</h4>
+                            <h3 class="text-white text-xl font-bold">Portal Wali Santri</h3>
+                            <p class="text-teal-100/60 text-xs leading-relaxed mt-2 pt-2 border-t border-teal-800/50">
+                                Pantau rincian pembayaran kas, kontribusi infaq putra Anda, serta unduh kuitansi digital sah secara real-time.
+                            </p>
+                        </div>
+                        <!-- Decorative Arrow Indicator -->
+                        <div class="mt-6 flex justify-between items-center text-[11px] font-bold text-emerald-400">
+                            <span>MASUK PORTAL</span>
+                            <i data-lucide="arrow-right" class="h-4 w-4 transform group-hover:translate-x-1.5 transition-transform"></i>
+                        </div>
+                    </div>
+
+                    <!-- Admin Card (Dark Emerald & Gold Concept) -->
+                    <div onclick="openAdminAuth()" class="group relative bg-gradient-to-br from-[#001f1c] to-[#013530] border border-amber-500/20 hover:border-amber-500/40 rounded-3xl p-6 shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer select-none">
+                        <!-- Holographic Golden Bank Chip Visual -->
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-10 h-8 bg-gradient-to-br from-amber-300 to-amber-500 rounded-lg shadow-inner relative overflow-hidden">
+                                <div class="absolute inset-0 bg-white/20 border-b border-r border-black/15"></div>
+                            </div>
+                            <i data-lucide="shield-alert" class="h-6 w-6 text-amber-400 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-amber-400 text-[10px] font-extrabold uppercase tracking-wider">Akses Pengurus Khusus</h4>
+                            <h3 class="text-white text-xl font-bold">Dashboard Pengurus</h3>
+                            <p class="text-teal-100/60 text-xs leading-relaxed mt-2 pt-2 border-t border-teal-800/50">
+                                Kelola data setoran santri baru, catat pengeluaran kegiatan kamar, ekspor/impor berkas cadangan, serta kelola sistem.
+                            </p>
+                        </div>
+                        <!-- Decorative Security Indicator -->
+                        <div class="mt-6 flex justify-between items-center text-[11px] font-bold text-amber-400">
+                            <span>SISTEM TERKUNCI</span>
+                            <div class="flex items-center space-x-1">
+                                <i data-lucide="lock" class="h-3.5 w-3.5"></i>
+                                <span>PIN PROTECTED</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Trust Indicator Bar (BNI-style Financial Values Footer) -->
+        <div class="w-full bg-[#001f1c]/90 border-t border-white/5 py-4 z-10 fade-in-slide" style="animation-delay: 0.45s;">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="flex items-center justify-center space-x-2 border-r border-white/5 last:border-0">
+                    <div class="bg-emerald-500/10 p-1.5 rounded-lg text-emerald-400">
+                        <i data-lucide="glasses" class="h-4 w-4"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="text-white font-bold text-xs block leading-none">100% Transparan</span>
+                        <span class="text-[9px] text-slate-400">Terbuka untuk Wali Santri</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center space-x-2 border-r border-white/5 last:border-0">
+                    <div class="bg-emerald-500/10 p-1.5 rounded-lg text-emerald-400">
+                        <i data-lucide="heart-handshake" class="h-4 w-4"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="text-white font-bold text-xs block leading-none">Sistem Amanah</span>
+                        <span class="text-[9px] text-slate-400">Sesuai Syariat & Kemaslahatan</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center space-x-2 border-r border-white/5 last:border-0">
+                    <div class="bg-emerald-500/10 p-1.5 rounded-lg text-emerald-400">
+                        <i data-lucide="zap" class="h-4 w-4"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="text-white font-bold text-xs block leading-none">Real-Time Data</span>
+                        <span class="text-[9px] text-slate-400">Pembaruan Langsung</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center space-x-2 last:border-0">
+                    <div class="bg-emerald-500/10 p-1.5 rounded-lg text-emerald-400">
+                        <i data-lucide="database-backup" class="h-4 w-4"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="text-white font-bold text-xs block leading-none">Backup Terproteksi</span>
+                        <span class="text-[9px] text-slate-400">Aman Terkendali</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-center text-[10px] text-teal-400/40 mt-4">
+                &copy; 2026 Ponpes Al-Iman Bulus Purworejo &bull; Kamar J2 Gebang-Loano (Putra)
+            </p>
+        </div>
+    </div>
+
+
+    <!-- ======================= MAIN APPLICATION PORTAL ======================= -->
+    <div id="mainApp" class="hidden flex-col min-h-screen">
+        
+        <!-- HEADER / NAVIGATION -->
+        <header class="bg-gradient-to-r from-emerald-900 to-teal-800 text-white shadow-md sticky top-0 z-40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-white/10 p-2.5 rounded-xl border border-white/20">
+                            <i data-lucide="mosque" class="h-6 w-6 text-emerald-300"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-base sm:text-lg font-bold tracking-tight">J2 SmartKas</h1>
+                            <p class="text-[10px] text-emerald-200 uppercase tracking-widest font-semibold">Ponpes Al-Iman Bulus &bull; Putra</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab Controls & Home Nav -->
+                    <div class="flex items-center space-x-2">
+                        <button onclick="backToLanding()" class="p-2 text-emerald-200 hover:text-white rounded-lg hover:bg-white/10 transition-colors" title="Kembali ke Menu Utama">
+                            <i data-lucide="home" class="h-5 w-5"></i>
+                        </button>
+                        <div class="h-6 w-px bg-white/20"></div>
+                        <button id="btnRoleWali" onclick="switchRole('wali')" class="flex items-center space-x-1 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all">
+                            <i data-lucide="users" class="h-3.5 w-3.5"></i>
+                            <span>Wali Santri</span>
+                        </button>
+                        <button id="btnRoleAdmin" onclick="openAdminAuth()" class="flex items-center space-x-1 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all">
+                            <i data-lucide="shield-check" class="h-3.5 w-3.5"></i>
+                            <span>Admin J2</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- BANNER KHAS PESANTREN -->
+        <div class="bg-gradient-to-b from-emerald-50 to-transparent py-6 border-b border-emerald-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="inline-flex items-center justify-center space-x-2 text-emerald-800 text-lg sm:text-2xl font-bold mb-1 arabic-font">
+                    بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+                </div>
+                <h2 class="text-lg sm:text-xl font-extrabold text-slate-800 tracking-tight">
+                    Transparansi Uang Kas & Infaq Kamar J2 (Gebang-Loano)
+                </h2>
+                <p class="text-xs text-slate-600 max-w-2xl mx-auto mt-1">
+                    Selamat datang para Wali Santri Putra di portal keuangan transparan Kamar J2 Ponpes Al-Iman Bulus. Seluruh kontribusi dana iuran kas dan infaq sukarela dikelola dengan amanah demi kemaslahatan santri.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            
+            <!-- ======================= WALI SANTRI PORTAL ======================= -->
+            <section id="waliPortal" class="space-y-6">
+                <!-- Quranic Reminder (QS Al-Baqarah: 261) -->
+                <div class="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100 rounded-2xl p-6 shadow-xs text-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-100/30 rounded-full blur-2xl pointer-events-none"></div>
+                    <div class="arabic-font text-lg sm:text-xl text-emerald-850 leading-loose mb-3">
+                        مَّثَلُ ٱلَّذِينَ يُنفِقُونَ أَمْوَٰلَهُمْ فِى سَبِيلِ ٱللَّهِ كَمَثَلِ حَبَّةٍ أَنبَتَتْ سَبْعَ سَنَابِلَ فِى كُلِّ سُنبُلَةٍ مِّا۟ئَةُ حَبَّةٍ ۗ وَٱللَّهُ يُضَٰعِفُ لِمَن يَشَآءُ ۗ وَٱللَّهُ وَٰسِعٌ عَلِيمٌ
+                    </div>
+                    <div class="text-[11px] sm:text-xs text-slate-600 italic max-w-3xl mx-auto leading-relaxed font-medium">
+                        "Perumpamaan orang yang menginfakkan hartanya di jalan Allah seperti sebutir biji yang menumbuhkan tujuh tangkai, pada setiap tangkai ada seratus biji. Allah melipatgandakan bagi siapa yang Dia kehendaki, dan Allah Maha Luas, Maha Mengetahui." <span class="font-bold text-emerald-700">(QS. Al-Baqarah: 261)</span>
+                    </div>
+                </div>
+
+                <!-- Search & Info Card -->
+                <div class="bg-white rounded-2xl shadow-sm border border-emerald-100 p-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+                        <div class="lg:col-span-2 space-y-2">
+                            <label for="searchSantri" class="block text-sm font-semibold text-slate-700">Cari Nama Putra Anda:</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+                                    <i data-lucide="search" class="h-5 w-5"></i>
+                                </span>
+                                <input type="text" id="searchSantri" oninput="filterWaliTable()" placeholder="Ketik nama santri putra (contoh: Chaerudin, Faqih, Bima...)" 
+                                       class="block w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-sm transition-all shadow-sm">
+                            </div>
+                            <p class="text-xs text-slate-500">Pencarian real-time akan memfilter transaksi berdasarkan nama yang Anda ketikkan.</p>
+                        </div>
+                        <!-- Quick Summary Card -->
+                        <div class="bg-gradient-to-br from-emerald-800 to-teal-950 text-white rounded-xl p-5 shadow-inner flex flex-col justify-between h-full min-h-[100px]">
+                            <div>
+                                <span class="text-xs text-emerald-200 uppercase tracking-wider font-bold">Total Setoran Sesuai Filter</span>
+                                <h3 id="waliTotalDisplay" class="text-2xl sm:text-3xl font-extrabold text-emerald-300 mt-1">Rp0</h3>
+                            </div>
+                            <div class="text-[10px] text-emerald-100/80 mt-2 flex items-center space-x-1">
+                                <i data-lucide="check-circle" class="h-3 w-3"></i>
+                                <span>Diperbarui langsung oleh Pengurus J2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wali Santri Table View -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+                    <div class="px-6 py-4 border-b border-slate-100 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 bg-slate-50/50">
+                        <div>
+                            <h3 class="font-bold text-slate-800 flex items-center gap-2">
+                                <i data-lucide="list" class="h-5 w-5 text-teal-700"></i>
+                                Daftar Setoran Kas & Infaq Santri Kamar J2
+                            </h3>
+                            <p class="text-xs text-slate-500">Menampilkan rekam pembayaran iuran kas kamar & infaq sukarela yang telah divalidasi</p>
+                        </div>
+                        <span id="waliCountLabel" class="bg-emerald-50 text-emerald-700 text-xs px-2.5 py-1 rounded-full font-semibold border border-emerald-100">
+                            Memuat data...
+                        </span>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100/75 text-slate-600 uppercase text-[11px] font-bold tracking-wider border-b border-slate-200/80">
+                                    <th class="py-4 px-6">Nama Santri (Putra)</th>
+                                    <th class="py-4 px-6">Tanggal TF</th>
+                                    <th class="py-4 px-6 text-right">Kas Kamar</th>
+                                    <th class="py-4 px-6 text-center">Durasi</th>
+                                    <th class="py-4 px-6 text-right">Infaq Tambahan</th>
+                                    <th class="py-4 px-6">Keterangan</th>
+                                    <th class="py-4 px-6 text-right font-bold text-teal-900">Total Setoran</th>
+                                    <th class="py-4 px-6 text-center">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="waliTableBody" class="divide-y divide-slate-100 text-sm">
+                                <!-- JS populated rows -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Empty state -->
+                    <div id="waliEmptyState" class="hidden py-12 text-center">
+                        <div class="inline-flex p-3 bg-slate-100 rounded-full text-slate-400 mb-3">
+                            <i data-lucide="info" class="h-6 w-6"></i>
+                        </div>
+                        <p class="text-slate-600 font-medium">Santri dengan nama tersebut tidak terdaftar di Kamar J2.</p>
+                        <p class="text-xs text-slate-400 mt-1">Pastikan ejaan nama sudah sesuai atau hubungi Pengurus J2 Daerah Gebang-Loano.</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- ======================= ADMIN PORTAL (SECURE) ======================= -->
+            <section id="adminPortal" class="hidden space-y-6">
+                <!-- Admin Notification & Warning -->
+                <div class="bg-emerald-50 border border-emerald-200/60 rounded-xl p-4 text-xs text-emerald-950 flex items-start space-x-3">
+                    <i data-lucide="shield" class="h-5 w-5 text-emerald-700 flex-shrink-0 mt-0.5"></i>
+                    <div>
+                        <span class="font-bold">Akses Terotorisasi Pengurus J2:</span> Hanya pengurus kamar J2 yang diberikan izin akses resmi yang berhak mengelola rekapitulasi data ini. Harap jaga kerahasiaan sandi demi keamanan kas internal.
+                    </div>
+                </div>
+
+                <!-- Quranic Reminder for Admin (QS Al-Baqarah: 261) -->
+                <div class="bg-gradient-to-r from-teal-50/50 to-emerald-50/50 border border-teal-100 rounded-2xl p-5 text-center relative overflow-hidden">
+                    <div class="arabic-font text-base sm:text-lg text-teal-800 leading-loose mb-2">
+                        مَّثَلُ ٱلَّذِينَ يُنفِقُونَ أَمْوَٰلَهُمْ فِى سَبِيلِ ٱللَّهِ كَمَثَلِ حَبَّةٍ أَنبَتَتْ سَبْعَ سَنَابِلَ فِى كُلِّ سُنبُلَةٍ مِّا۟ئَةُ حَبَّةٍ ۗ وَٱللَّهُ يُضَٰعِفُ لِمَن يَشَآءُ ۗ وَٱللَّهُ وَٰسِعٌ عَلِيمٌ
+                    </div>
+                    <div class="text-[10px] sm:text-xs text-slate-600 italic max-w-3xl mx-auto leading-relaxed">
+                        "Perumpamaan orang yang menginfakkan hartanya di jalan Allah seperti sebutir biji yang menumbuhkan tujuh tangkai, pada setiap tangkai ada seratus biji. Allah melipatgandakan bagi siapa yang Dia kehendaki, dan Allah Maha Luas, Maha Mengetahui." <span class="font-bold text-teal-700">(QS. Al-Baqarah: 261)</span>
+                    </div>
+                </div>
+
+                <!-- Admin Top Stats Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex items-center space-x-4">
+                        <div class="bg-teal-50 p-3 rounded-xl text-teal-600">
+                            <i data-lucide="wallet" class="h-6 w-6"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-slate-400">Total Kas Masuk</span>
+                            <h4 id="adminStatTotalKas" class="text-lg font-extrabold text-slate-800">Rp0</h4>
+                            <p class="text-[10px] text-slate-400 mt-0.5">Iuran Wajib Kamar</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex items-center space-x-4">
+                        <div class="bg-emerald-50 p-3 rounded-xl text-emerald-600">
+                            <i data-lucide="heart-handshake" class="h-6 w-6"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-slate-400">Total Infaq</span>
+                            <h4 id="adminStatTotalInfaq" class="text-lg font-extrabold text-emerald-800">Rp0</h4>
+                            <p class="text-[10px] text-slate-400 mt-0.5">Sumbangan Sukarela</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex items-center space-x-4">
+                        <div class="bg-rose-50 p-3 rounded-xl text-rose-600">
+                            <i data-lucide="shopping-cart" class="h-6 w-6"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-slate-400">Total Pengeluaran</span>
+                            <h4 id="adminStatTotalKeluar" class="text-lg font-extrabold text-rose-700">Rp0</h4>
+                            <p class="text-[10px] text-slate-400 mt-0.5" id="adminStatExpenseCount">0 Transaksi</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-emerald-800 to-teal-900 p-5 rounded-2xl shadow-sm text-white flex items-center space-x-4">
+                        <div class="bg-white/15 p-3 rounded-xl text-emerald-200">
+                            <i data-lucide="banknote" class="h-6 w-6"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-emerald-300">Saldo Kamar J2</span>
+                            <h4 id="adminStatSaldoAkhir" class="text-lg font-extrabold text-emerald-300">Rp0</h4>
+                            <p class="text-[10px] text-emerald-100/70 mt-0.5">Total Bersih Tersedia</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex items-center space-x-4">
+                        <div class="bg-blue-50 p-3 rounded-xl text-blue-600">
+                            <i data-lucide="users" class="h-6 w-6"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-slate-400">Total Santri</span>
+                            <h4 id="adminStatTotalOrang" class="text-lg font-extrabold text-slate-800">0</h4>
+                            <p class="text-[10px] text-slate-400 mt-0.5">Aktif membayar iuran</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Action Toolbar & Main Tables -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    
+                    <!-- TABLE 1: UANG MASUK (KAS & INFAQ) -->
+                    <div class="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <div class="px-6 py-4 border-b border-slate-100 bg-slate-50/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                                <div>
+                                    <h3 class="font-bold text-slate-800 text-sm flex items-center gap-2">
+                                        <i data-lucide="arrow-down-left" class="h-4 w-4 text-emerald-600"></i>
+                                        Pemasukan Kas & Infaq Kamar J2
+                                    </h3>
+                                    <p class="text-[11px] text-slate-500">Data pembayaran iuran masuk & infaq sukarela</p>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button onclick="openAddModal()" class="flex items-center space-x-1 px-3 py-1.5 bg-emerald-600 text-white rounded-lg text-xs font-bold hover:bg-emerald-700 transition">
+                                        <i data-lucide="plus" class="h-3.5 w-3.5"></i>
+                                        <span>Catat Dana Masuk</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Search filter in Table -->
+                            <div class="p-3 border-b border-slate-100 bg-slate-50/20">
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+                                        <i data-lucide="search" class="h-3.5 w-3.5"></i>
+                                    </span>
+                                    <input type="text" id="adminSearchInput" oninput="filterAdminTable()" placeholder="Cari nama santri pembayar..." 
+                                           class="block w-full pl-8 pr-4 py-1.5 border border-slate-200 rounded-lg text-xs focus:ring-1 focus:ring-emerald-500 shadow-sm">
+                                </div>
+                            </div>
+
+                            <div class="overflow-x-auto max-h-[350px]">
+                                <table class="w-full text-left border-collapse">
+                                    <thead>
+                                        <tr class="bg-slate-50 text-slate-600 uppercase text-[10px] font-bold border-b border-slate-100">
+                                            <th class="py-2.5 px-4">Nama Santri</th>
+                                            <th class="py-2.5 px-4">Tgl TF</th>
+                                            <th class="py-2.5 px-4 text-right">Kas Kamar</th>
+                                            <th class="py-2.5 px-4 text-center">Durasi</th>
+                                            <th class="py-2.5 px-4 text-right">Infaq</th>
+                                            <th class="py-2.5 px-4">Keterangan</th>
+                                            <th class="py-2.5 px-4 text-right">Total</th>
+                                            <th class="py-2.5 px-4 text-center">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="adminTableBody" class="divide-y divide-slate-100 text-xs">
+                                        <!-- JS populated -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="px-4 py-2 border-t border-slate-100 bg-slate-50/70 flex justify-between items-center text-[10px] text-slate-500">
+                            <span id="adminCountLabel">0 Data</span>
+                            <span>Menampilkan iuran masuk santri putra</span>
+                        </div>
+                    </div>
+
+                    <!-- TABLE 2: PENGELUARAN KAS KAMAR -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <div class="px-6 py-4 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center">
+                                <div>
+                                    <h3 class="font-bold text-slate-800 text-sm flex items-center gap-1.5">
+                                        <i data-lucide="arrow-up-right" class="h-4 w-4 text-rose-600"></i>
+                                        Pengeluaran Kamar J2
+                                    </h3>
+                                    <p class="text-[11px] text-slate-500">Pencatatan penarikan dana keperluan kamar</p>
+                                </div>
+                                <button onclick="openAddExpenseModal()" class="flex items-center space-x-1 px-2.5 py-1.5 bg-rose-600 text-white rounded-lg text-xs font-bold hover:bg-rose-700 transition">
+                                    <i data-lucide="plus" class="h-3.5 w-3.5"></i>
+                                    <span>Catat Keluar</span>
+                                </button>
+                            </div>
+
+                            <div class="overflow-y-auto max-h-[400px]">
+                                <table class="w-full text-left border-collapse">
+                                    <thead>
+                                        <tr class="bg-slate-50 text-slate-600 uppercase text-[10px] font-bold border-b border-slate-100">
+                                            <th class="py-2.5 px-4">Keperluan / Tgl</th>
+                                            <th class="py-2.5 px-4 text-right">Nominal</th>
+                                            <th class="py-2.5 px-4 text-center">Hapus</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="expenseTableBody" class="divide-y divide-slate-100 text-xs">
+                                        <!-- JS populated -->
+                                    </tbody>
+                                </table>
+                                
+                                <div id="expenseEmptyState" class="hidden py-8 text-center text-slate-400 text-xs">
+                                    <i data-lucide="clipboard-list" class="h-8 w-8 mx-auto opacity-40 mb-2"></i>
+                                    Belum ada rekap pengeluaran kamar.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="px-4 py-2 border-t border-slate-100 bg-slate-50/70 text-right text-[10px] text-rose-600 font-bold" id="expenseTotalBottom">
+                            Total Keluar: Rp0
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Backup & Master Admin Configuration Panels -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 flex flex-wrap gap-4 justify-between items-center">
+                    <div class="space-y-1">
+                        <h4 class="font-bold text-slate-800 text-xs flex items-center gap-2">
+                            <i data-lucide="folder-cog" class="h-4 w-4 text-teal-600"></i>
+                            Peralatan Utilitas Backup Data & Konfigurasi
+                        </h4>
+                        <p class="text-[11px] text-slate-500">Ekspor rekap kas & infaq ke format CSV atau ubah PIN pengurus secara mandiri.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 w-full sm:w-auto">
+                        <button onclick="downloadCSV()" class="flex items-center space-x-1 px-3 py-2 bg-white text-slate-700 border border-slate-200 rounded-lg text-xs font-bold hover:bg-slate-50 transition">
+                            <i data-lucide="download-cloud" class="h-3.5 w-3.5"></i>
+                            <span>Download CSV</span>
+                        </button>
+                        <button onclick="downloadJSONBackup()" class="flex items-center space-x-1 px-3 py-2 bg-teal-50 text-teal-700 border border-teal-100 rounded-lg text-xs font-bold hover:bg-teal-100 transition">
+                            <i data-lucide="database" class="h-3.5 w-3.5"></i>
+                            <span>Backup Sistem (.json)</span>
+                        </button>
+                        <label class="flex items-center space-x-1 px-3 py-2 bg-slate-100 text-slate-700 rounded-lg text-xs font-bold hover:bg-slate-200 transition cursor-pointer">
+                            <i data-lucide="upload-cloud" class="h-3.5 w-3.5"></i>
+                            <span>Restore Backup</span>
+                            <input type="file" id="importFileInput" onchange="importJSONBackup(event)" accept=".json" class="hidden">
+                        </label>
+                        <button onclick="openPinModal()" class="flex items-center space-x-1 px-3 py-2 bg-rose-50 text-rose-700 border border-rose-100 rounded-lg text-xs font-bold hover:bg-rose-100 transition">
+                            <i data-lucide="key" class="h-3.5 w-3.5"></i>
+                            <span>Ubah PIN J2</span>
+                        </button>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 mt-12 text-xs">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div class="text-center md:text-left">
+                        <p class="font-semibold text-slate-200">Sistem Keuangan J2 SmartKas</p>
+                        <p class="mt-1 text-slate-400">Pondok Pesantren Al-Iman Bulus, Gebang, Purworejo.</p>
+                        <p class="text-[10px] text-teal-400/80">Daerah Gebang-Loano &bull; Santri Mandiri Khusus Putra</p>
+                    </div>
+                    <div class="text-center md:text-right">
+                        <p>&copy; 2026 Pengurus Kamar J2 Ponpes Al-Iman Bulus. All rights reserved.</p>
+                        <p class="text-slate-500 mt-0.5">Didesain dengan asas transparansi, kejujuran, dan penuh berkah.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- ======================= MODAL: PIN AUTHENTICATION ======================= -->
+    <div id="authModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-xl border border-slate-100">
+            <div class="text-center">
+                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-emerald-100 text-emerald-600 mb-4">
+                    <i data-lucide="lock" class="h-6 w-6"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">Keamanan Pengurus J2</h3>
+                <p class="text-xs text-slate-500 mt-1">Masukkan PIN Admin khusus Kamar J2 untuk masuk ke dashboard kepengurusan.</p>
+                
+                <div class="mt-3 bg-amber-50 text-amber-800 p-2.5 rounded-lg text-xs font-semibold text-left flex items-start space-x-1.5">
+                    <i data-lucide="shield-alert" class="h-4 w-4 text-amber-600 flex-shrink-0"></i>
+                    <span>Sandi hanya diberikan kepada pengurus J2 yang diberikan izin akses resmi.</span>
+                </div>
+            </div>
+            
+            <div class="mt-5 space-y-3">
+                <input type="password" id="pinInput" placeholder="Masukkan PIN Pengurus" class="block w-full px-4 py-3 border border-slate-200 rounded-xl text-center font-bold tracking-widest text-lg focus:ring-2 focus:ring-emerald-500">
+                <div id="pinError" class="text-red-500 text-xs hidden text-center font-medium">Sandi PIN yang Anda masukkan salah!</div>
+            </div>
+
+            <div class="mt-6 flex space-x-3">
+                <button onclick="closeAdminAuth()" class="flex-1 py-2.5 bg-slate-100 hover:bg-slate-200 rounded-xl text-xs font-bold text-slate-700 transition">Batal</button>
+                <button onclick="submitAdminAuth()" class="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-700 rounded-xl text-xs font-bold text-white transition shadow-sm">Masuk Admin</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================= MODAL: TAMBAH/EDIT DATA SETORAN SANTRI ======================= -->
+    <div id="dataModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full shadow-xl border border-slate-100 overflow-hidden flex flex-col max-h-[90vh]">
+            <div class="bg-slate-50 px-6 py-4 border-b border-slate-100 flex justify-between items-center">
+                <h3 id="modalTitle" class="font-bold text-slate-800 text-base flex items-center gap-1.5">
+                    <i data-lucide="plus-circle" class="h-5 w-5 text-emerald-600"></i>
+                    Catat Kontribusi Dana Santri J2
+                </h3>
+                <button onclick="closeDataModal()" class="text-slate-400 hover:text-slate-600">
+                    <i data-lucide="x" class="h-5 w-5"></i>
+                </button>
+            </div>
+
+            <form id="santriForm" onsubmit="saveSantriData(event)" class="p-6 space-y-4 overflow-y-auto">
+                <input type="hidden" id="editIndex" value="">
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">Nama Lengkap Santri (Putra)</label>
+                    <input type="text" id="formNama" required placeholder="Masukkan nama santri putra..." class="block w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500">
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">Tanggal Transfer</label>
+                        <input type="date" id="formTanggal" required class="block w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">Durasi Iuran (Tahun)</label>
+                        <input type="number" id="formTahun" min="0" step="1" required placeholder="Misal: 1" class="block w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">Nominal Kas Kamar (Rp)</label>
+                        <input type="number" id="formNominalKas" min="0" required placeholder="Contoh: 50000" class="block w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">Nominal Infaq Sukarela (Rp)</label>
+                        <input type="number" id="formNominalInfaq" min="0" required placeholder="Contoh: 100000" class="block w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">Keterangan Catatan</label>
+                    <input type="text" id="formKeteranganLain" placeholder="Contoh: Titipan kitab, infaq semester 1, dll." class="block w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500">
+                </div>
+
+                <div class="bg-teal-50 rounded-xl p-4 border border-teal-200/60 text-xs text-teal-950 flex items-start space-x-2.5">
+                    <i data-lucide="info" class="h-4 w-4 text-teal-600 mt-0.5 flex-shrink-0"></i>
+                    <div>
+                        <span class="font-bold">Info Perhitungan:</span> Jumlah nominal setoran keseluruhan akan secara otomatis dijumlahkan secara dinamis (Kas + Infaq) oleh mesin database.
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-slate-100 flex justify-end space-x-3">
+                    <button type="button" onclick="closeDataModal()" class="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-xs font-bold hover:bg-slate-200 transition">Batal</button>
+                    <button type="submit" class="px-4 py-2 bg-emerald-600 text-white rounded-lg text-xs font-bold hover:bg-emerald-700 transition shadow-sm">Simpan Setoran</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- ======================= MODAL: TAMBAH PENGELUARAN KAS KAMAR ======================= -->
+    <div id="expenseModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
+        <div class="bg-white rounded-2xl max-w-sm w-full shadow-xl border border-slate-100 overflow-hidden flex flex-col">
+            <div class="bg-slate-50 px-6 py-4 border-b border-slate-100 flex justify-between items-center">
+                <h3 class="font-bold text-slate-800 text-sm flex items-center gap-1.5">
+                    <i data-lucide="plus-circle" class="h-4 w-4 text-rose-600"></i>
+                    Catat Pengeluaran Baru J2
+                </h3>
+                <button onclick="closeExpenseModal()" class="text-slate-400 hover:text-slate-600">
+                    <i data-lucide="x" class="h-5 w-5"></i>
+                </button>
+            </div>
+
+            <form id="expenseForm" onsubmit="saveExpenseData(event)" class="p-6 space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">Keperluan / Nama Barang</label>
+                    <input type="text" id="formExpKeperluan" required placeholder="Contoh: Pembelian sapu, perbaikan lampu..." class="block w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-rose-500">
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">Tanggal Keluar</label>
+                        <input type="date" id="formExpTanggal" required class="block w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-rose-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">Nominal (Rp)</label>
+                        <input type="number" id="formExpNominal" required min="1" placeholder="Contoh: 15000" class="block w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-rose-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">Keterangan Catatan</label>
+                    <input type="text" id="formExpKeterangan" placeholder="Catatan tambahan (opsional)" class="block w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-rose-500">
+                </div>
+
+                <div class="pt-4 border-t border-slate-100 flex justify-end space-x-3">
+                    <button type="button" onclick="closeExpenseModal()" class="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-xs font-bold hover:bg-slate-200 transition">Batal</button>
+                    <button type="submit" class="px-4 py-2 bg-rose-600 text-white rounded-lg text-xs font-bold hover:bg-rose-700 transition shadow-sm">Simpan Pengeluaran</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ======================= MODAL: UBAH PIN ADMIN ======================= -->
+    <div id="pinModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-xl border border-slate-100">
+            <div class="text-center mb-4">
+                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-teal-100 text-teal-600 mb-2">
+                    <i data-lucide="key" class="h-6 w-6"></i>
+                </div>
+                <h3 class="text-base font-bold text-slate-900">Ubah PIN Pengurus J2</h3>
+                <p class="text-xs text-slate-500">Ubah kode sandi demi menjaga kerahasiaan data rekapitulasi.</p>
+            </div>
+            <div class="space-y-3">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 mb-1">PIN Lama Pengurus</label>
+                    <input type="password" id="formPinLama" placeholder="PIN Lama" class="block w-full px-3 py-2 border border-slate-200 rounded-lg text-xs font-bold text-center tracking-widest">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 mb-1">PIN Baru</label>
+                    <input type="password" id="formPinBaru" placeholder="Masukkan PIN Baru" class="block w-full px-3 py-2 border border-slate-200 rounded-lg text-xs font-bold text-center tracking-widest">
+                </div>
+            </div>
+            <div class="mt-5 flex space-x-2">
+                <button onclick="closePinModal()" class="flex-1 py-2 bg-slate-100 text-slate-700 rounded-lg text-xs font-semibold">Batal</button>
+                <button onclick="saveNewPin()" class="flex-1 py-2 bg-rose-600 text-white rounded-lg text-xs font-semibold shadow-sm">Ubah PIN</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ======================= MODAL: CUSTOM CONFIRMATION DIALOG ======================= -->
+    <div id="confirmModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-xl border border-slate-100">
+            <div class="text-center">
+                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100 text-red-600 mb-4">
+                    <i data-lucide="alert-triangle" class="h-6 w-6"></i>
+                </div>
+                <h3 class="text-base font-bold text-slate-900" id="confirmTitle">Konfirmasi Hapus</h3>
+                <p class="text-xs text-slate-500 mt-2" id="confirmMessage">Apakah Anda yakin akan menghapus data ini dari sistem?</p>
+            </div>
+            <div class="mt-6 flex space-x-3">
+                <button id="btnConfirmCancel" class="flex-1 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-bold transition">Batal</button>
+                <button id="btnConfirmOK" class="flex-1 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-xs font-bold transition shadow-sm">Ya, Hapus</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================= MODAL: RECEIPT (KUITANSI DIGITAL) ======================= -->
+    <div id="receiptModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
+        <div class="bg-white rounded-2xl max-w-xl w-full shadow-2xl overflow-hidden">
+            <!-- Modal Header for Control -->
+            <div class="bg-slate-100 px-6 py-3 border-b border-slate-200 flex justify-between items-center print:hidden">
+                <span class="text-xs font-bold text-slate-700">Kuitansi Pembayaran Digital</span>
+                <div class="flex items-center space-x-2">
+                    <button onclick="window.print()" class="flex items-center space-x-1 px-3 py-1.5 bg-emerald-600 text-white rounded-lg text-xs font-bold hover:bg-emerald-700 transition">
+                        <i data-lucide="printer" class="h-3.5 w-3.5"></i>
+                        <span>Cetak Kuitansi</span>
+                    </button>
+                    <button onclick="closeReceiptModal()" class="text-slate-400 hover:text-slate-600">
+                        <i data-lucide="x" class="h-5 w-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Receipt Print Area -->
+            <div id="receiptPrintArea" class="p-8 bg-white text-slate-800 relative">
+                <!-- Watermark Stamp LUNAS -->
+                <div class="absolute right-12 bottom-24 border-4 border-emerald-500/30 text-emerald-600/30 font-extrabold text-2xl uppercase tracking-widest px-4 py-2 rounded-lg transform rotate-12 select-none pointer-events-none">
+                    Lunas / PAID
+                </div>
+
+                <!-- Header Kuitansi -->
+                <div class="flex justify-between items-start border-b-2 border-emerald-800 pb-4 mb-6">
+                    <div>
+                        <h2 class="text-base font-extrabold text-emerald-800">PP AL-IMAN BULUS PURWOREJO</h2>
+                        <p class="text-[10px] text-slate-500">Daerah Gebang-Loano &bull; Kamar J2 (Putra)</p>
+                        <p class="text-[9px] text-slate-400">Bulus, Kec. Gebang, Kabupaten Purworejo, Jawa Tengah</p>
+                    </div>
+                    <div class="text-right">
+                        <h3 class="text-lg font-black text-slate-700 tracking-wider">KUITANSI</h3>
+                        <p class="text-[10px] text-slate-500">No: <span id="receiptNo" class="font-bold text-slate-800">#K-2026-J2</span></p>
+                    </div>
+                </div>
+
+                <!-- Body Detail -->
+                <div class="space-y-4 text-xs">
+                    <div class="grid grid-cols-3 py-1 border-b border-slate-100">
+                        <span class="text-slate-500 font-medium">Telah Diterima Dari</span>
+                        <span class="col-span-2 text-slate-900 font-bold capitalize" id="receiptWaliNama">-</span>
+                    </div>
+                    <div class="grid grid-cols-3 py-1 border-b border-slate-100">
+                        <span class="text-slate-500 font-medium">Nama Santri (Putra)</span>
+                        <span class="col-span-2 text-slate-900 font-bold capitalize" id="receiptSantriNama">-</span>
+                    </div>
+                    <div class="grid grid-cols-3 py-1 border-b border-slate-100">
+                        <span class="text-slate-500 font-medium">Tanggal Pembayaran</span>
+                        <span class="col-span-2 text-slate-900 font-medium" id="receiptDate">-</span>
+                    </div>
+                    
+                    <!-- Detail Rincian Alokasi Dana -->
+                    <div class="mt-6">
+                        <h4 class="font-bold text-slate-700 mb-2 text-[10px] uppercase tracking-wider">Rincian Alokasi Kas & Infaq:</h4>
+                        <table class="w-full text-left text-xs">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-700 font-bold border-b border-slate-200">
+                                    <th class="py-2 px-3">Jenis Dana</th>
+                                    <th class="py-2 px-3 text-center">Durasi</th>
+                                    <th class="py-2 px-3 text-right">Jumlah</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-slate-100">
+                                    <td class="py-2 px-3">Iuran Kas Kamar J2</td>
+                                    <td class="py-2 px-3 text-center" id="receiptKasDurasi">0</td>
+                                    <td class="py-2 px-3 text-right" id="receiptKasNominal">Rp0</td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <td class="py-2 px-3">Infaq Sukarela Kamar</td>
+                                    <td class="py-2 px-3 text-center">-</td>
+                                    <td class="py-2 px-3 text-right" id="receiptInfaqNominal">Rp0</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="font-extrabold text-emerald-800 bg-emerald-50">
+                                    <td class="py-2.5 px-3 text-[11px]" colspan="2">TOTAL SETORAN</td>
+                                    <td class="py-2.5 px-3 text-right text-xs" id="receiptTotalNominal">Rp0</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <div class="grid grid-cols-3 py-1 mt-4">
+                        <span class="text-slate-500 font-medium">Keterangan Penyetoran</span>
+                        <span class="col-span-2 text-slate-700 italic" id="receiptKeterangan">-</span>
+                    </div>
+                </div>
+
+                <!-- Footer Tanda Tangan -->
+                <div class="mt-10 flex justify-between items-center text-xs">
+                    <div>
+                        <p class="text-[9px] text-slate-400">Dicetak melalui Sistem Keuangan J2 SmartKas</p>
+                        <p class="text-[8px] text-slate-400">Sistem Pencatatan Akuntabel & Amanah</p>
+                    </div>
+                    <div class="text-center w-40">
+                        <p class="text-slate-500 mb-12">Pengurus Kamar J2</p>
+                        <p class="font-bold text-slate-800 underline">Pondok Pesantren Al-Iman</p>
+                        <p class="text-[9px] text-slate-500">Bulus - Gebang</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION BOX -->
+    <div id="toastNotification" class="fixed bottom-5 right-5 bg-slate-950 text-white px-5 py-3 rounded-xl shadow-2xl border border-slate-800 z-[60] transform translate-y-20 opacity-0 transition-all duration-300 flex items-center space-x-2.5 text-xs max-w-sm">
+        <span class="text-emerald-400" id="toastIcon"><i data-lucide="check-circle" class="h-4 w-4"></i></span>
+        <span id="toastMessage" class="font-medium">Proses Berhasil!</span>
+    </div>
+
+
+    <!-- MAIN APP JAVASCRIPT -->
+    <script>
+        // Data default Pemasukan Santri (Kas + Infaq)
+        let santriData = [
+            {
+                nama: "Chaerudin",
+                tanggal: "2026-05-13",
+                nominalKas: 100000,
+                tahun: 2,
+                nominalInfaq: 100000,
+                keteranganLain: "Kas Kamar J2 lunas untuk 2 tahun & Titipan kitab kuning"
+            },
+            {
+                nama: "Faqih Ghuril Abror",
+                tanggal: "2026-05-13",
+                nominalKas: 50000,
+                tahun: 1,
+                nominalInfaq: 25000,
+                keteranganLain: "Infaq kas kelengkapan kasur"
+            },
+            {
+                nama: "Ahmad Mujab Al Adani",
+                tanggal: "2026-05-13",
+                nominalKas: 50000,
+                tahun: 1,
+                nominalInfaq: 10000,
+                keteranganLain: "Iuran kas kamar"
+            },
+            {
+                nama: "M Bima Al Fatih",
+                tanggal: "2026-05-14",
+                nominalKas: 50000,
+                tahun: 1,
+                nominalInfaq: 50000,
+                keteranganLain: "Infaq sukarela cat dinding kamar"
+            },
+            {
+                nama: "Naufal",
+                tanggal: "2026-05-06",
+                nominalKas: 50000,
+                tahun: 1,
+                nominalInfaq: 0,
+                keteranganLain: "Infaq sukarela nihil"
+            },
+            {
+                nama: "M Sofyan Sabik",
+                tanggal: "2026-05-21",
+                nominalKas: 50000,
+                tahun: 1,
+                nominalInfaq: 20000,
+                keteranganLain: "Setoran iuran kas"
+            }
+        ];
+
+        // Data default Pengeluaran Kamar J2
+        let expensesData = [
+            {
+                keperluan: "Sapu lidi & Serokan Sampah Kamar J2",
+                tanggal: "2026-05-15",
+                nominal: 25000,
+                keterangan: "Pembelian di pasar Gebang"
+            },
+            {
+                keperluan: "Lampu LED Kamar Philips 19 Watt",
+                tanggal: "2026-05-18",
+                nominal: 45000,
+                keterangan: "Ganti lampu tengah yang putus"
+            }
+        ];
+
+        // System State
+        let currentRole = 'wali'; 
+        let adminPin = "220526"; // PIN Resmi Pengurus J2 sesuai instruksi
+
+        // Initialize App on Load
+        window.onload = function() {
+            lucide.createIcons();
+            
+            // Load state dari localStorage
+            if (localStorage.getItem('pesantren_j2_rekap_data_full')) {
+                santriData = JSON.parse(localStorage.getItem('pesantren_j2_rekap_data_full'));
+            } else {
+                saveToStorage();
+            }
+
+            if (localStorage.getItem('pesantren_j2_expenses')) {
+                expensesData = JSON.parse(localStorage.getItem('pesantren_j2_expenses'));
+            } else {
+                saveExpensesToStorage();
+            }
+
+            if (localStorage.getItem('pesantren_j2_pin_secure')) {
+                adminPin = localStorage.getItem('pesantren_j2_pin_secure');
+            } else {
+                localStorage.setItem('pesantren_j2_pin_secure', adminPin);
+            }
+
+            renderAll();
+        }
+
+        // Storage Handlers
+        function saveToStorage() {
+            localStorage.setItem('pesantren_j2_rekap_data_full', JSON.stringify(santriData));
+        }
+
+        function saveExpensesToStorage() {
+            localStorage.setItem('pesantren_j2_expenses', JSON.stringify(expensesData));
+        }
+
+        // Format Currency Helpers
+        function formatRupiah(angka) {
+            return new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            }).format(angka);
+        }
+
+        function formatTanggalIndo(dateString) {
+            if (!dateString) return "-";
+            const options = { day: 'numeric', month: 'long', year: 'numeric' };
+            const date = new Date(dateString);
+            return date.toLocaleDateString('id-ID', options);
+        }
+
+        function formatTanggalShort(dateString) {
+            if (!dateString) return "-";
+            const date = new Date(dateString);
+            const d = String(date.getDate()).padStart(2, '0');
+            const m = String(date.getMonth() + 1).padStart(2, '0');
+            const y = date.getFullYear();
+            return `${d}/${m}/${y}`;
+        }
+
+        // Navigation Handlers
+        function enterAsWali() {
+            document.getElementById('landingPage').classList.add('hidden');
+            document.getElementById('mainApp').classList.remove('hidden');
+            document.getElementById('mainApp').classList.add('flex');
+            switchRole('wali');
+        }
+
+        function backToLanding() {
+            document.getElementById('mainApp').classList.remove('flex');
+            document.getElementById('mainApp').classList.add('hidden');
+            document.getElementById('landingPage').classList.remove('hidden');
+        }
+
+        // Role Switcher Panel
+        function switchRole(role) {
+            currentRole = role;
+            const btnWali = document.getElementById('btnRoleWali');
+            const btnAdmin = document.getElementById('btnRoleAdmin');
+            const waliPortal = document.getElementById('waliPortal');
+            const adminPortal = document.getElementById('adminPortal');
+
+            if (role === 'wali') {
+                btnWali.className = "flex items-center space-x-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-emerald-950 shadow-sm border border-emerald-100";
+                btnAdmin.className = "flex items-center space-x-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-emerald-100 hover:bg-emerald-800/60";
+                waliPortal.classList.remove('hidden');
+                adminPortal.classList.add('hidden');
+                renderWaliTable();
+            } else if (role === 'admin') {
+                btnAdmin.className = "flex items-center space-x-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-emerald-950 shadow-sm border border-emerald-100";
+                btnWali.className = "flex items-center space-x-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-emerald-100 hover:bg-emerald-800/60";
+                waliPortal.classList.add('hidden');
+                adminPortal.classList.remove('hidden');
+                renderAdminPortal();
+            }
+        }
+
+        // Admin PIN Validation Modal
+        function openAdminAuth() {
+            // Jika sudah di dalam admin, tidak perlu minta pin lagi
+            if (currentRole === 'admin' && !document.getElementById('mainApp').classList.contains('hidden')) return;
+            
+            document.getElementById('authModal').classList.remove('hidden');
+            document.getElementById('pinInput').value = "";
+            document.getElementById('pinInput').focus();
+            document.getElementById('pinError').classList.add('hidden');
+        }
+
+        function closeAdminAuth() {
+            document.getElementById('authModal').classList.add('hidden');
+        }
+
+        function submitAdminAuth() {
+            const enteredPin = document.getElementById('pinInput').value;
+            if (enteredPin === adminPin) {
+                closeAdminAuth();
+                document.getElementById('landingPage').classList.add('hidden');
+                document.getElementById('mainApp').classList.remove('hidden');
+                document.getElementById('mainApp').classList.add('flex');
+                switchRole('admin');
+                showToast("Selamat Datang Pengurus J2!", "shield-check");
+            } else {
+                document.getElementById('pinError').classList.remove('hidden');
+            }
+        }
+
+        // PIN Change Handlers
+        function openPinModal() {
+            document.getElementById('pinModal').classList.remove('hidden');
+            document.getElementById('formPinLama').value = "";
+            document.getElementById('formPinBaru').value = "";
+        }
+
+        function closePinModal() {
+            document.getElementById('pinModal').classList.add('hidden');
+        }
+
+        function saveNewPin() {
+            const oldP = document.getElementById('formPinLama').value;
+            const newP = document.getElementById('formPinBaru').value;
+
+            if (oldP !== adminPin) {
+                showToast("PIN lama tidak sesuai!", "alert-triangle");
+                return;
+            }
+            if (newP.trim().length === 0) {
+                showToast("PIN baru tidak boleh kosong!", "alert-triangle");
+                return;
+            }
+
+            adminPin = newP;
+            localStorage.setItem('pesantren_j2_pin_secure', adminPin);
+            closePinModal();
+            showToast("PIN berhasil diperbarui!", "key");
+        }
+
+
+        // Render All Views
+        function renderAll() {
+            renderWaliTable();
+            renderAdminPortal();
+        }
+
+        // ================= WALI SANTRI: List & Filter Render =================
+        function renderWaliTable() {
+            const searchVal = document.getElementById('searchSantri').value.toLowerCase().trim();
+            const tbody = document.getElementById('waliTableBody');
+            const emptyState = document.getElementById('waliEmptyState');
+            const countLabel = document.getElementById('waliCountLabel');
+            tbody.innerHTML = '';
+
+            let filtered = santriData.filter(item => 
+                item.nama.toLowerCase().includes(searchVal)
+            );
+
+            // Sort data terbaru di atas
+            filtered.sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal));
+
+            let totalUangFiltered = 0;
+
+            if (filtered.length === 0) {
+                emptyState.classList.remove('hidden');
+                countLabel.innerText = "0 Santri ditemukan";
+            } else {
+                emptyState.classList.add('hidden');
+                countLabel.innerText = `${filtered.length} Santri ditemukan`;
+                
+                filtered.forEach((item) => {
+                    const totalTransfer = Number(item.nominalKas || 0) + Number(item.nominalInfaq || 0);
+                    totalUangFiltered += totalTransfer;
+
+                    const realIndex = santriData.indexOf(item);
+
+                    const row = document.createElement('tr');
+                    row.className = "hover:bg-emerald-50/30 transition-colors duration-150";
+                    row.innerHTML = `
+                        <td class="py-3.5 px-6 font-semibold text-slate-900 capitalize">${item.nama}</td>
+                        <td class="py-3.5 px-6 text-slate-600">${formatTanggalIndo(item.tanggal)}</td>
+                        <td class="py-3.5 px-6 text-right text-slate-700">${formatRupiah(item.nominalKas)}</td>
+                        <td class="py-3.5 px-6 text-center">
+                            <span class="bg-teal-50 text-teal-700 text-[11px] font-bold px-2 py-0.5 rounded border border-teal-100">
+                                ${item.tahun || 1} Tahun
+                            </span>
+                        </td>
+                        <td class="py-3.5 px-6 text-right text-emerald-800 font-medium">${formatRupiah(item.nominalInfaq)}</td>
+                        <td class="py-3.5 px-6 text-slate-500 italic max-w-xs truncate">${item.keteranganLain || "-"}</td>
+                        <td class="py-3.5 px-6 text-right font-extrabold text-teal-900">${formatRupiah(totalTransfer)}</td>
+                        <td class="py-3.5 px-6 text-center">
+                            <button onclick="openReceipt(${realIndex})" class="inline-flex items-center space-x-1 px-2 py-1.5 bg-emerald-50 text-emerald-800 rounded-lg hover:bg-emerald-100 transition text-[11px] font-bold border border-emerald-100/50">
+                                <i data-lucide="file-text" class="h-3 w-3"></i>
+                                <span>Kuitansi</span>
+                            </button>
+                        </td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            }
+
+            document.getElementById('waliTotalDisplay').innerText = formatRupiah(totalUangFiltered);
+            lucide.createIcons();
+        }
+
+        function filterWaliTable() {
+            renderWaliTable();
+        }
+
+
+        // ================= ADMIN: Portal Calculations & Subsystem Tables =================
+        function renderAdminPortal() {
+            const tbodyIn = document.getElementById('adminTableBody');
+            const tbodyOut = document.getElementById('expenseTableBody');
+            const searchVal = document.getElementById('adminSearchInput').value.toLowerCase().trim();
+            const expEmptyState = document.getElementById('expenseEmptyState');
+            
+            tbodyIn.innerHTML = '';
+            tbodyOut.innerHTML = '';
+
+            // Calculate Totals (Overall Master)
+            let sumKas = santriData.reduce((acc, curr) => acc + Number(curr.nominalKas || 0), 0);
+            let sumInfaq = santriData.reduce((acc, curr) => acc + Number(curr.nominalInfaq || 0), 0);
+            let totalMasuk = sumKas + sumInfaq;
+
+            let totalKeluar = expensesData.reduce((acc, curr) => acc + Number(curr.nominal || 0), 0);
+            let saldoAkhir = totalMasuk - totalKeluar;
+
+            // Render stats card
+            document.getElementById('adminStatTotalKas').innerText = formatRupiah(sumKas);
+            document.getElementById('adminStatTotalInfaq').innerText = formatRupiah(sumInfaq);
+            document.getElementById('adminStatTotalKeluar').innerText = formatRupiah(totalKeluar);
+            document.getElementById('adminStatExpenseCount').innerText = `${expensesData.length} Kegiatan`;
+            
+            const saldoEl = document.getElementById('adminStatSaldoAkhir');
+            saldoEl.innerText = formatRupiah(saldoAkhir);
+            if (saldoAkhir < 0) {
+                saldoEl.className = "text-lg font-extrabold text-rose-500";
+            } else {
+                saldoEl.className = "text-lg font-extrabold text-emerald-300";
+            }
+
+            document.getElementById('adminStatTotalOrang').innerText = santriData.length;
+
+            // RENDER TABLE 1: PEMASUKAN DENGAN FILTER PENCARIAN
+            let filteredIn = santriData.filter(item => 
+                item.nama.toLowerCase().includes(searchVal)
+            );
+            filteredIn.sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal));
+
+            document.getElementById('adminCountLabel').innerText = `${filteredIn.length} Santri Terpilih`;
+
+            filteredIn.forEach((item) => {
+                const totalTransfer = Number(item.nominalKas || 0) + Number(item.nominalInfaq || 0);
+                const realIndex = santriData.indexOf(item);
+
+                const row = document.createElement('tr');
+                row.className = "hover:bg-slate-50 transition-colors";
+                row.innerHTML = `
+                    <td class="py-2.5 px-4 font-semibold text-slate-800 capitalize">${item.nama}</td>
+                    <td class="py-2.5 px-4 text-slate-500">${formatTanggalShort(item.tanggal)}</td>
+                    <td class="py-2.5 px-4 text-right text-slate-700">${formatRupiah(item.nominalKas)}</td>
+                    <td class="py-2.5 px-4 text-center font-bold text-slate-700">${item.tahun || 1} Thn</td>
+                    <td class="py-2.5 px-4 text-right text-emerald-800 font-semibold">${formatRupiah(item.nominalInfaq)}</td>
+                    <td class="py-2.5 px-4 text-slate-500 italic max-w-xs truncate">${item.keteranganLain || "-"}</td>
+                    <td class="py-2.5 px-4 text-right font-extrabold text-emerald-950">${formatRupiah(totalTransfer)}</td>
+                    <td class="py-2.5 px-4 text-center space-x-1 whitespace-nowrap">
+                        <button onclick="editSantriData(${realIndex})" class="p-1 bg-blue-50 text-blue-600 rounded hover:bg-blue-100 transition inline-flex items-center" title="Edit Data">
+                            <i data-lucide="edit-3" class="h-3 w-3"></i>
+                        </button>
+                        <button onclick="deleteSantriData(${realIndex})" class="p-1 bg-rose-50 text-rose-600 rounded hover:bg-rose-100 transition inline-flex items-center" title="Hapus Data">
+                            <i data-lucide="trash-2" class="h-3 w-3"></i>
+                        </button>
+                    </td>
+                `;
+                tbodyIn.appendChild(row);
+            });
+
+            // RENDER TABLE 2: PENGELUARAN KAS KAMAR
+            if (expensesData.length === 0) {
+                expEmptyState.classList.remove('hidden');
+            } else {
+                expEmptyState.classList.add('hidden');
+                // Sort pengeluaran terbaru di atas
+                let sortedExpenses = [...expensesData].sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal));
+                
+                sortedExpenses.forEach((item) => {
+                    const realIndex = expensesData.indexOf(item);
+                    const row = document.createElement('tr');
+                    row.className = "hover:bg-rose-50/20 transition-colors";
+                    row.innerHTML = `
+                        <td class="py-2 px-4">
+                            <div class="font-semibold text-slate-800">${item.keperluan}</div>
+                            <div class="text-[9px] text-slate-400">${formatTanggalShort(item.tanggal)} ${item.keterangan ? ' - ' + item.keterangan : ''}</div>
+                        </td>
+                        <td class="py-2 px-4 text-right font-extrabold text-rose-700">${formatRupiah(item.nominal)}</td>
+                        <td class="py-2 px-4 text-center">
+                            <button onclick="deleteExpenseData(${realIndex})" class="p-1 text-slate-400 hover:text-rose-600 rounded transition inline-flex items-center">
+                                <i data-lucide="trash" class="h-3.5 w-3.5"></i>
+                            </button>
+                        </td>
+                    `;
+                    tbodyOut.appendChild(row);
+                });
+            }
+
+            document.getElementById('expenseTotalBottom').innerText = `Total Pengeluaran: ${formatRupiah(totalKeluar)}`;
+            lucide.createIcons();
+        }
+
+        function filterAdminTable() {
+            renderAdminPortal();
+        }
+
+
+        // ================= MODAL CONTROLS & CRUD FOR SETORAN SANTRI =================
+        function openAddModal() {
+            document.getElementById('modalTitle').innerHTML = `
+                <i data-lucide="plus-circle" class="h-5 w-5 text-emerald-600"></i>
+                Catat Setoran Baru Santri J2
+            `;
+            document.getElementById('editIndex').value = "";
+            document.getElementById('santriForm').reset();
+            
+            // Set tanggal hari ini default
+            const today = new Date().toISOString().substring(0, 10);
+            document.getElementById('formTanggal').value = today;
+
+            document.getElementById('dataModal').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function editSantriData(index) {
+            const item = santriData[index];
+            document.getElementById('modalTitle').innerHTML = `
+                <i data-lucide="edit-3" class="h-5 w-5 text-blue-600"></i>
+                Ubah Kontribusi Setoran Santri
+            `;
+            document.getElementById('editIndex').value = index;
+            document.getElementById('formNama').value = item.nama;
+            document.getElementById('formTanggal').value = item.tanggal;
+            document.getElementById('formTahun').value = item.tahun || 1;
+            document.getElementById('formNominalKas').value = item.nominalKas;
+            document.getElementById('formNominalInfaq').value = item.nominalInfaq;
+            document.getElementById('formKeteranganLain').value = item.keteranganLain;
+
+            document.getElementById('dataModal').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeDataModal() {
+            document.getElementById('dataModal').classList.add('hidden');
+        }
+
+        function saveSantriData(event) {
+            event.preventDefault();
+            
+            const index = document.getElementById('editIndex').value;
+            const nama = document.getElementById('formNama').value.trim();
+            const tanggal = document.getElementById('formTanggal').value;
+            const tahun = parseInt(document.getElementById('formTahun').value) || 1;
+            const nominalKas = parseFloat(document.getElementById('formNominalKas').value) || 0;
+            const nominalInfaq = parseFloat(document.getElementById('formNominalInfaq').value) || 0;
+            const keteranganLain = document.getElementById('formKeteranganLain').value.trim();
+
+            const record = { nama, tanggal, nominalKas, tahun, nominalInfaq, keteranganLain };
+
+            if (index === "") {
+                santriData.push(record);
+                showToast("Data setoran kas & infaq santri baru dicatat!", "check-circle");
+            } else {
+                santriData[index] = record;
+                showToast("Setoran santri berhasil diupdate!", "edit-3");
+            }
+
+            saveToStorage();
+            closeDataModal();
+            renderAll();
+        }
+
+        function deleteSantriData(index) {
+            const targetName = santriData[index].nama;
+            openCustomConfirm("Hapus Setoran Santri", `Apakah Anda yakin ingin menghapus catatan kas & infaq milik "${targetName}"?`, function() {
+                santriData.splice(index, 1);
+                saveToStorage();
+                renderAll();
+                showToast("Catatan setoran dihapus.", "trash-2");
+            });
+        }
+
+
+        // ================= MODAL CONTROLS & CRUD FOR OUTFLOWS / EXPENSES =================
+        function openAddExpenseModal() {
+            document.getElementById('expenseForm').reset();
+            const today = new Date().toISOString().substring(0, 10);
+            document.getElementById('formExpTanggal').value = today;
+            document.getElementById('expenseModal').classList.remove('hidden');
+        }
+
+        function closeExpenseModal() {
+            document.getElementById('expenseModal').classList.add('hidden');
+        }
+
+        function saveExpenseData(event) {
+            event.preventDefault();
+            
+            const keperluan = document.getElementById('formExpKeperluan').value.trim();
+            const tanggal = document.getElementById('formExpTanggal').value;
+            const nominal = parseFloat(document.getElementById('formExpNominal').value) || 0;
+            const keterangan = document.getElementById('formExpKeterangan').value.trim();
+
+            const record = { keperluan, tanggal, nominal, keterangan };
+            expensesData.push(record);
+
+            saveExpensesToStorage();
+            closeExpenseModal();
+            renderAll();
+            showToast("Pengeluaran kas berhasil dicatat!", "check");
+        }
+
+        function deleteExpenseData(index) {
+            const targetName = expensesData[index].keperluan;
+            openCustomConfirm("Hapus Pengeluaran Kamar", `Apakah Anda yakin ingin menghapus rekap pengeluaran "${targetName}"?`, function() {
+                expensesData.splice(index, 1);
+                saveExpensesToStorage();
+                renderAll();
+                showToast("Catatan pengeluaran dihapus.", "trash");
+            });
+        }
+
+
+        // ================= DIGITAL RECEIPT POPULATOR =================
+        function openReceipt(index) {
+            const item = santriData[index];
+            const total = Number(item.nominalKas || 0) + Number(item.nominalInfaq || 0);
+            
+            document.getElementById('receiptNo').innerText = `#K-2026-J2-${String(index + 1).padStart(3, '0')}`;
+            document.getElementById('receiptWaliNama').innerText = "Wali dari " + item.nama;
+            document.getElementById('receiptSantriNama').innerText = item.nama;
+            document.getElementById('receiptDate').innerText = formatTanggalIndo(item.tanggal);
+            
+            document.getElementById('receiptKasDurasi').innerText = (item.tahun || 1) + " Tahun";
+            document.getElementById('receiptKasNominal').innerText = formatRupiah(item.nominalKas);
+            document.getElementById('receiptInfaqNominal').innerText = formatRupiah(item.nominalInfaq);
+            document.getElementById('receiptTotalNominal').innerText = formatRupiah(total);
+            document.getElementById('receiptKeterangan').innerText = item.keteranganLain ? `"${item.keteranganLain}"` : "-";
+
+            document.getElementById('receiptModal').classList.remove('hidden');
+        }
+
+        function closeReceiptModal() {
+            document.getElementById('receiptModal').classList.add('hidden');
+        }
+
+        // ================= BACKUP & RESTORE UTILITIES =================
+        function downloadCSV() {
+            let csvContent = "data:text/csv;charset=utf-8,";
+            csvContent += "Nama Santri,Tanggal TF,Kas Kamar,Tahun,Infaq Tambahan,Keterangan,Total Transfer\r\n";
+
+            santriData.forEach(item => {
+                const total = Number(item.nominalKas || 0) + Number(item.nominalInfaq || 0);
+                const row = [
+                    `"${item.nama.replace(/"/g, '""')}"`,
+                    `"${item.tanggal}"`,
+                    item.nominalKas,
+                    item.tahun || 1,
+                    item.nominalInfaq,
+                    `"${(item.keteranganLain || '').replace(/"/g, '""')}"`,
+                    total
+                ].join(",");
+                csvContent += row + "\r\n";
+            });
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", `Rekap_Kas_Infaq_Al-Iman_J2_${new Date().toISOString().slice(0,10)}.csv`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            showToast("Backup laporan CSV diunduh!", "download");
+        }
+
+        // Backup seluruh system data (Pemasukan & Pengeluaran) dalam format JSON
+        function downloadJSONBackup() {
+            const dataToExport = {
+                santri: santriData,
+                expenses: expensesData,
+                backupDate: new Date().toISOString()
+            };
+            
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(dataToExport));
+            const link = document.createElement('a');
+            link.setAttribute("href", dataStr);
+            link.setAttribute("download", `Sistem_Backup_Kamar_J2_${new Date().toISOString().slice(0,10)}.json`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            showToast("Sistem backup file JSON terunduh!", "database");
+        }
+
+        // Restore Backup dari Berkas JSON
+        function importJSONBackup(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const parsedData = JSON.parse(e.target.result);
+                    if (parsedData && parsedData.santri && parsedData.expenses) {
+                        openCustomConfirm("Restore Backup", "Apakah Anda yakin ingin menimpa data kas & pengeluaran saat ini dengan berkas restore ini?", function() {
+                            santriData = parsedData.santri;
+                            expensesData = parsedData.expenses;
+                            saveToStorage();
+                            saveExpensesToStorage();
+                            renderAll();
+                            showToast("Restore sistem berhasil dipulihkan!", "upload-cloud");
+                        });
+                    } else {
+                        showToast("Format berkas backup tidak sesuai!", "alert-triangle");
+                    }
+                } catch (err) {
+                    showToast("Gagal membaca file JSON!", "alert-triangle");
+                }
+            };
+            reader.readAsText(file);
+            event.target.value = ''; 
+        }
+
+
+        // ================= CUSTOM DIALOG & TOAST SYSTEM =================
+        let confirmActionCallback = null;
+
+        function openCustomConfirm(title, message, callback) {
+            document.getElementById('confirmTitle').innerText = title;
+            document.getElementById('confirmMessage').innerText = message;
+            document.getElementById('confirmModal').classList.remove('hidden');
+            confirmActionCallback = callback;
+        }
+
+        // Action Confirm OK
+        document.getElementById('btnConfirmOK').addEventListener('click', function() {
+            document.getElementById('confirmModal').classList.add('hidden');
+            if (confirmActionCallback) {
+                confirmActionCallback();
+                confirmActionCallback = null;
+            }
+        });
+
+        // Action Confirm Cancel
+        document.getElementById('btnConfirmCancel').addEventListener('click', function() {
+            document.getElementById('confirmModal').classList.add('hidden');
+            confirmActionCallback = null;
+        });
+
+        function showToast(message, iconName = "check-circle") {
+            const toast = document.getElementById('toastNotification');
+            const toastMsg = document.getElementById('toastMessage');
+            const toastIcon = document.getElementById('toastIcon');
+
+            toastMsg.innerText = message;
+            toastIcon.innerHTML = `<i data-lucide="${iconName}" class="h-4 w-4"></i>`;
+            lucide.createIcons();
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
